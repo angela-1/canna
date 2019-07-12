@@ -33,6 +33,12 @@ Vue.component('choose-xlsx', {
 <div class="slotarea">
 <h3>请选择 Excel 数据文件</h3>
 <div class="line">
+<button type="button" v-on:click="chooseXlsx">选择</button>
+<p>
+已选择：<strong>{{xlsxFile}}</strong>
+</p>
+</div>
+<div class="line">
 标题行：
 <input type="number" v-model="titleLine" />
 </div>
@@ -40,10 +46,6 @@ Vue.component('choose-xlsx', {
 主键列：
 <input type="number" v-model="primary" />
 </div>
-<p>
-已选择：<strong>{{xlsxFile}}</strong>
-</p>
-<button type="button" v-on:click="chooseXlsx">选择</button>
 </div>
 `
 })

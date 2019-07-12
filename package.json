@@ -18,13 +18,13 @@
   "author": "GitHub",
   "license": "CC0-1.0",
   "devDependencies": {
-    "electron": "^4.0.7",
+    "electron": "^5.0.6",
     "electron-packager": "^13.1.1",
     "electron-reload": "^1.4.0"
   },
   "dependencies": {
-    "docxtemplater": "^3.9.9",
+    "docxtemplater": "^3.13.5",
     "jszip": "^2.6.1",
-    "xlsx": "^0.14.1"
+    "xlsx": "^0.14.3"
   }
 }
