@@ -21,7 +21,7 @@ Vue.component('choose-docx', {
   },
   template: `
 <div class="slotarea">
-<h3>请选择 Word 模板文件</h3>
+<h3>2 请选择 Word 模板文件</h3>
 <p>
 已选择：<strong>{{docxFile}}</strong>
 </p>

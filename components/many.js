@@ -3,8 +3,10 @@ require('./choosedocx.js')
 require('./chooseoutput.js')
 
 Vue.component('many', {
+  name: 'many',
   data: function() {
     return {
+      message: '请按步骤操作',
       count: 0,
       currentComponent: 'choose-xlsx',
       chooseDone: false
@@ -54,9 +56,11 @@ Vue.component('many', {
       console.log(obj)
       const ipcRenderer = this.$electron.ipcRenderer
       ipcRenderer.send('generate-docx', obj)
-      console.log('done')
-      localStorage.clear()
-      
+      ipcRenderer.on('generate-done', (event, path) => {
+        localStorage.clear()
+        this.message = '完成'
+      })
+
     }
   },
   template: `
@@ -65,6 +69,7 @@ Vue.component('many', {
     <button v-if="count > 0" v-on:click="previous">上一步</button>
     <button v-if="count < 2 && chooseDone" v-on:click="next">下一步</button>
     <button class="btn-primary" v-if="count === 2 && chooseDone" v-on:click="generate">生成</button>
+    <span>{{message}}</span>
   </div> 
 
   <component v-bind:is="currentComponent" v-on:choose="chooseComplete"></component>

@@ -21,7 +21,7 @@ Vue.component('choose-output', {
   },
   template: `
 <div class="slotarea">
-<h3>请选择输出目录</h3>
+<h3>3 请选择输出目录</h3>
 <p>
 已选择：<strong>{{outputPath}}</strong>
 </p>

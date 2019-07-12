@@ -2,16 +2,16 @@ Vue.component('choose-xlsx', {
   data: function() {
     return {
       xlsxFile: '',
-      titleLine: 0,
-      primary: 0
+      titleLine: 1,
+      primary: 1
     }
   },
   watch: {
     titleLine: function(newValue, oldValue) {
-      localStorage.setItem('titleLine', newValue)
+      localStorage.setItem('titleLine', newValue - 1)
     },
     primary: function(newValue, oldValue) {
-      localStorage.setItem('primary', newValue)
+      localStorage.setItem('primary', newValue - 1)
     }
   },
   methods: {
@@ -31,7 +31,7 @@ Vue.component('choose-xlsx', {
   },
   template: `
 <div class="slotarea">
-<h3>请选择 Excel 数据文件</h3>
+<h3>1 请选择 Excel 数据文件</h3>
 <div class="line">
 <button type="button" v-on:click="chooseXlsx">选择</button>
 <p>

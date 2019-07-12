@@ -3,6 +3,3 @@
 // All of the Node.js APIs are available in this process.
 
 
-Vue.prototype.$electron = require('electron')
-
-
